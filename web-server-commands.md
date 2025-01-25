@@ -1,10 +1,10 @@
-# =========================================
-# COMMANDS TO RUN IN THE WEB SERVER
-# =========================================
+=========================================
+### COMMANDS TO RUN IN THE WEB SERVER
+=========================================
 
-# =========================================
-# COPY WEB-TIER CODE FROM S3
-# =========================================
+=========================================
+### COPY WEB-TIER CODE FROM S3
+=========================================
 
 ```
 # !/bin/bash
@@ -22,10 +22,11 @@ sudo chown -R ec2-user:ec2-user /home/ec2-user
 sudo chmod -R 755 /home/ec2-user
 ```
 
-# =========================================
-# INSTALLING NODEJS (FOR USING REACT LIBRARY)
-# =========================================
-# (REF: https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html)
+=========================================
+### INSTALLING NODEJS (FOR USING REACT LIBRARY)
+=========================================
+
+- (REF: https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html)
 
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -37,21 +38,24 @@ npm install
 npm audit fix
 ```
 
-# =========================================
-# BUILDING THE APP FOR PRODUCTION
-# =========================================
-# Below command is used to build the code which can be served by the webserver (Nginx)
+=========================================
+### BUILDING THE APP FOR PRODUCTION
+=========================================
+
+- Below command is used to build the code which can be served by the webserver (Nginx)
 
 ```
 cd /home/ec2-user/web-tier
 npm run build
 
 ```
-# =========================================
-# INSTALLING NGINX (WEBSERVER)
-# =========================================
-# (REF: https://dev.to/0xfedev/how-to-install-nginx-as-reverse-proxy-and-configure-certbot-on-amazon-linux-2023-2cc9)
-# NOTE: Before using the nginx.conf file in below code, ensure to add the Internal-Load-Balancer-DNS in the nginx.conf file & upload it to S3
+=========================================
+### INSTALLING NGINX (WEBSERVER)
+=========================================
+
+- (REF: https://dev.to/0xfedev/how-to-install-nginx-as-reverse-proxy-and-configure-certbot-on-amazon-linux-2023-2cc9)
+
+- NOTE: Before using the nginx.conf file in below code, ensure to add the Internal-Load-Balancer-DNS in the nginx.conf file & upload it to S3
 
 ```
 sudo yum install nginx -y	

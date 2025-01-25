@@ -1,11 +1,12 @@
-# =========================================
-# COMMANDS TO RUN IN THE APPLICATION SERVER
-# =========================================
+=========================================
+### COMMANDS TO RUN IN THE APPLICATION SERVER
+=========================================
 
-# ======================================
-# INSTALLING MYSQL IN AMAZON LINUX 2023
-# ======================================
-# (REF: https://dev.to/aws-builders/installing-mysql-on-amazon-linux-2023-1512)
+======================================
+### INSTALLING MYSQL IN AMAZON LINUX 2023
+======================================
+
+- (REF: https://dev.to/aws-builders/installing-mysql-on-amazon-linux-2023-1512)
 
 ```
 # !/bin/bash
@@ -19,7 +20,7 @@ sudo dnf install mysql-community-client -y
 mysql --version
 ```
 
-# TO TEST CONNECTION BETWEEN APP-SERVER & DATABASE SERVER
+### TO TEST CONNECTION BETWEEN APP-SERVER & DATABASE SERVER
 
 ```
 # MODIFY BELOW CODE WITH YOUR RDS
@@ -28,9 +29,9 @@ mysql -h <RDS-Endpoint> -u <username> -p <Hit Enter & provide your password>
 # mysql -h my-rds-3tier-instance-1.czc0a2syg36m.us-east-1.rds.amazonaws.com -u admin -p
 ```
 
-# ===============================
-# COPYING CONTENT FROM S3 BUCKET
-# ===============================
+===============================
+### COPYING CONTENT FROM S3 BUCKET
+===============================
 
 ```
 cd /home/ec2-user
@@ -47,10 +48,11 @@ sudo chown -R ec2-user:ec2-user /home/ec2-user/app-tier
 sudo chmod -R 7 55 /home/ec2-user/app-tier
 ```
 
-# ===============================
-# INSTALLING NODEJS
-# ===============================
-# (REF: https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html)
+===============================
+### INSTALLING NODEJS
+===============================
+
+- (REF: https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html)
 
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -62,9 +64,9 @@ npm install
 npm audit fix
 ```
 
-# ===============================
-# STARTING INDEX.JS FILE
-# ===============================
+===============================
+### STARTING INDEX.JS FILE
+===============================
 
 ```
 pm2 start index.js 	#(Start Application with PM2, PM2 is process manager for NodeJS)
